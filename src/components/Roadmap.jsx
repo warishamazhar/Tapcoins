@@ -64,17 +64,18 @@ export default function Roadmap() {
 
   return (
     <section
-      className="relative bg-cover bg-center py-28"
+      className="relative bg-cover bg-center py-20 md:py-28"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* TITLE */}
-      <h2 className="mb-20 text-center text-3xl font-semibold text-white">
+      <h2 className="mb-16 md:mb-20 text-center text-2xl md:text-3xl font-semibold text-white">
         TAPCOINS ROADMAP
       </h2>
 
-      <div className="relative mx-auto max-w-6xl">
+      {/* DESKTOP TIMELINE */}
+      <div className="relative mx-auto max-w-6xl hidden md:block">
 
-        {/* TOP CONTENT */}
+        {/* TOP */}
         <div className="relative mb-20 h-[200px]">
           {steps.map(
             (s, i) =>
@@ -108,10 +109,9 @@ export default function Roadmap() {
           )}
         </div>
 
-        {/* CENTER LINE */}
+        {/* LINE */}
         <div className="relative mb-20">
           <div className="absolute left-0 right-0 top-1/2 h-[3px] -translate-y-1/2 rounded-full bg-[#E6D8B8]/80" />
-
           <div className="relative h-14">
             {steps.map((s, i) => (
               <div
@@ -123,10 +123,10 @@ export default function Roadmap() {
                   transform: 'translate(-50%, -50%)',
                 }}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-bold shadow-lg">
+                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-bold">
                   {s.step}
                 </div>
-                <div className="mt-1 text-center text-[10px] font-semibold text-white">
+                <div className="mt-1 text-center text-[10px] text-white">
                   STEP
                 </div>
               </div>
@@ -134,7 +134,7 @@ export default function Roadmap() {
           </div>
         </div>
 
-        {/* BOTTOM CONTENT */}
+        {/* BOTTOM */}
         <div className="relative h-[200px]">
           {steps.map(
             (s, i) =>
@@ -169,36 +169,53 @@ export default function Roadmap() {
         </div>
       </div>
 
+      {/* MOBILE STACK */}
+      <div className="md:hidden px-6 space-y-12">
+        {steps.map((s, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4 }}
+            className="text-center"
+          >
+            <div className="mx-auto mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-purple-500 to-indigo-600 text-white font-bold">
+              {s.step}
+            </div>
+
+            <h3 className="mb-2 text-sm font-semibold text-white">
+              {s.title}
+            </h3>
+
+            <ul className="space-y-1 text-xs text-gray-300">
+              {s.items.map((item, idx) => (
+                <li key={idx} className="flex justify-center gap-2">
+                  <span className="mt-[6px] h-1 w-1 rounded-full bg-[#5a7cff]" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        ))}
+      </div>
+
       {/* CTA */}
-      <div className="mt-40 text-center">
-  <h3 className="text-2xl font-semibold text-white">
-    Join <span className="text-yellow-400">TapCoins</span>
-  </h3>
+      <div className="mt-28 md:mt-40 text-center">
+        <h3 className="text-2xl font-semibold text-white">
+          Join <span className="text-yellow-400">TapCoins</span>
+        </h3>
 
-  <p className="mt-2 text-lg text-gray-300">
-    Explore Web3, Earn Rewards!
-  </p>
+        <p className="mt-2 text-lg text-gray-300">
+          Explore Web3, Earn Rewards!
+        </p>
 
-  {/* Social Icons */}
-  <div className="mt-6 flex justify-center gap-8 opacity-80">
-    <img
-      src={telegram}
-      alt="Telegram"
-      className="h-7 md:h-8 cursor-pointer transition hover:scale-110 hover:opacity-100"
-    />
-    <img
-      src={twitter}
-      alt="Twitter"
-      className="h-7 md:h-8 cursor-pointer transition hover:scale-110 hover:opacity-100"
-    />
-    <img
-      src={youtube}
-      alt="YouTube"
-      className="h-7 md:h-8 cursor-pointer transition hover:scale-110 hover:opacity-100"
-    />
-  </div>
-</div>
-
+        <div className="mt-6 flex justify-center gap-8 opacity-80">
+          <img src={telegram} className="h-7 md:h-8 hover:scale-110 transition" />
+          <img src={twitter} className="h-7 md:h-8 hover:scale-110 transition" />
+          <img src={youtube} className="h-7 md:h-8 hover:scale-110 transition" />
+        </div>
+      </div>
     </section>
   )
 }

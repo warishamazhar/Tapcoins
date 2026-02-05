@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import bg from '../assets/bg-game-center.png'
 
-// ICONS (replace with your real images)
+// ICONS
 import market from '../assets/gamemarket.png'
 import token from '../assets/gametoken.png'
 import nft from '../assets/NFT.png'
@@ -41,12 +41,12 @@ const cards = [
 export default function GameCenter() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center py-32"
+      className="relative overflow-hidden bg-cover bg-center py-24 md:py-32"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* TITLE */}
-      <div className="relative z-10 text-center">
-        <h2 className="text-3xl font-semibold text-white">
+      <div className="relative z-10 px-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-semibold text-white">
           TapCoins Game Center
         </h2>
         <p className="mt-3 text-sm text-gray-300">
@@ -55,13 +55,13 @@ export default function GameCenter() {
       </div>
 
       {/* CARDS */}
-      <div className="relative z-10 mt-20 flex justify-center gap-10 px-6">
+      <div className="relative z-10 mt-14 md:mt-20 flex flex-col items-center gap-10 md:flex-row md:justify-center px-6">
         {cards.map((card, i) => (
           <motion.div
             key={i}
             whileHover={{ y: -12, rotate: 0, scale: 1.04 }}
             transition={{ type: 'spring', stiffness: 200, damping: 14 }}
-            className="relative w-[230px]"
+            className="relative w-[90%] max-w-[260px] md:w-[230px]"
             style={{ transform: `rotate(${card.rotate})` }}
           >
             {/* PIN */}
@@ -78,7 +78,7 @@ export default function GameCenter() {
               <img
                 src={card.icon}
                 alt={card.title}
-                className="mx-auto mb-5 h-28 w-28 object-contain"
+                className="mx-auto mb-5 h-24 w-24 md:h-28 md:w-28 object-contain"
               />
 
               <h3 className="mb-2 whitespace-pre-line text-sm font-semibold text-white">

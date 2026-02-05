@@ -4,26 +4,24 @@ import builderSdk from '../assets/builder-sdk.png'
 import playerId from '../assets/player-id1.png'
 import daoImage from '../assets/dao1.png'
 
-
 export default function SdkAndPlayerId() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center py-32"
+      className="relative overflow-hidden bg-cover bg-center py-20 md:py-32"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* BACKGROUND GLOWS */}
       <div className="pointer-events-none absolute -top-40 -left-40 h-[600px] w-[600px] rounded-full bg-[#5a7cff]/25 blur-[160px]" />
       <div className="pointer-events-none absolute bottom-[-200px] right-[-200px] h-[700px] w-[700px] rounded-full bg-[#00E5FF]/20 blur-[180px]" />
 
-     <div className="relative z-10 mx-auto max-w-5xl px-6">
-
+      <div className="relative z-10 mx-auto max-w-5xl px-6">
 
         {/* ================= SDK BLOCK ================= */}
-      <div className="grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:justify-items-center">
+        <div className="grid grid-cols-1 items-center gap-12 md:gap-16 md:grid-cols-2 md:justify-items-center">
 
           {/* LEFT TEXT */}
           <motion.div
-           className="max-w-md"
+            className="max-w-md text-center md:text-left"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -37,11 +35,11 @@ export default function SdkAndPlayerId() {
             </p>
 
             <ul className="mt-6 space-y-3 text-sm text-gray-300">
-              <li className="flex gap-3">
+              <li className="flex gap-3 justify-center md:justify-start">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#5a7cff]" />
                 Simplifies the integration of TON Network features into games.
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-3 justify-center md:justify-start">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#5a7cff]" />
                 Enables developers to tap into TapCoins' large user base and ecosystem,
                 facilitating growth and engagement.
@@ -57,42 +55,41 @@ export default function SdkAndPlayerId() {
             transition={{ duration: 0.8 }}
             className="relative flex justify-center"
           >
-            {/* IMAGE GLOW */}
-            <div className="absolute inset-0 h-[360px] w-[360px] rounded-full bg-[#5a7cff]/30 blur-[120px]" />
+            <div className="absolute h-[280px] w-[280px] md:h-[360px] md:w-[360px] rounded-full bg-[#5a7cff]/30 blur-[120px]" />
             <img
               src={builderSdk}
               alt="TapCoins Builder SDK"
-              className="relative z-10 w-[360px] md:w-[420px]"
+              className="relative z-10 w-[280px] md:w-[420px]"
             />
           </motion.div>
         </div>
 
         {/* ================= PLAYER ID BLOCK ================= */}
-        <div className="mt-32 grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:justify-items-center">
-          {/* LEFT IMAGE */}
+        <div className="mt-24 md:mt-32 grid grid-cols-1 items-center gap-12 md:gap-16 md:grid-cols-2 md:justify-items-center">
+
+          {/* IMAGE */}
           <motion.div
-          
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className=" max-w-md relative flex justify-center"
+            className="relative flex justify-center"
           >
-            {/* IMAGE GLOW */}
-            <div className="absolute inset-0 h-[420px] w-[420px] rounded-full bg-[#00E5FF]/25 blur-[140px]" />
+            <div className="absolute h-[300px] w-[300px] md:h-[420px] md:w-[420px] rounded-full bg-[#00E5FF]/25 blur-[140px]" />
             <img
               src={playerId}
               alt="TapCoins Player ID"
-              className="relative z-10 w-[360px] md:w-[440px]"
+              className="relative z-10 w-[280px] md:w-[440px]"
             />
           </motion.div>
 
-          {/* RIGHT TEXT */}
+          {/* TEXT */}
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="text-center md:text-left"
           >
             <h3 className="text-2xl font-semibold text-white">
               TapCoins Player ID
@@ -102,15 +99,13 @@ export default function SdkAndPlayerId() {
             </p>
 
             <ul className="mt-6 space-y-3 text-sm text-gray-300">
-              <li className="flex gap-3">
+              <li className="flex gap-3 justify-center md:justify-start">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00E5FF]" />
-                Allows users to create a unified ID to track progress, earn rewards,
-                and access various games and tasks seamlessly.
+                Allows users to create a unified ID to track progress and rewards.
               </li>
-              <li className="flex gap-3">
+              <li className="flex gap-3 justify-center md:justify-start">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[#00E5FF]" />
-                Enhances user retention and engagement by providing a consistent
-                identity across all games and activities.
+                Enhances user retention across games and activities.
               </li>
             </ul>
 
@@ -120,82 +115,73 @@ export default function SdkAndPlayerId() {
 
             <ul className="mt-4 space-y-2 text-sm text-gray-300">
               {[
-                'Free AirDrop (Token / NFT) from hundreds of Web3 Game projects.',
+                'Free AirDrop (Token / NFT) from Web3 Game projects.',
                 'Unique account growth system.',
-                'Build the credit from using TapCoins Player ID.',
-                'In the future, it can be directly used to log in to Web3 Game and get incentives.',
+                'Build credit using TapCoins Player ID.',
+                'Future Web3 login incentives.',
               ].map((item, i) => (
-                <li key={i} className="flex gap-3">
+                <li key={i} className="flex gap-3 justify-center md:justify-start">
                   <span className="text-yellow-400">✓</span>
                   {item}
                 </li>
               ))}
             </ul>
           </motion.div>
-          
         </div>
-        {/* ================= DAO / STAKING BLOCK ================= */}
-<div className="mt-32 grid grid-cols-1 items-center gap-16 md:grid-cols-2 md:justify-items-center">
-  
-  {/* LEFT TEXT */}
-  <motion.div
-    initial={{ opacity: 0, x: -40 }}
-    whileInView={{ opacity: 1, x: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="max-w-md"
-  >
-    <h3 className="text-2xl font-semibold text-white">
-      TapCoins Builder SDK
-    </h3>
 
-    <p className="mt-2 text-sm text-gray-300">
-      A staking and earning protocol
-    </p>
+        {/* ================= DAO BLOCK ================= */}
+        <div className="mt-24 md:mt-32 grid grid-cols-1 items-center gap-12 md:gap-16 md:grid-cols-2 md:justify-items-center">
 
-    {/* HIGHLIGHT BOX */}
-    <div className="mt-6 rounded-xl bg-white/5 p-5 text-sm text-gray-300 backdrop-blur">
-      Users can stake tokens from various games to earn rewards. By staking
-      TAP tokens through TapCoins DAO, you will have the opportunity to earn
-      TAP, limited edition NFTs, and contribute to the development of the
-      TapCoins ecosystem.
-    </div>
+          {/* TEXT */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="max-w-md text-center md:text-left"
+          >
+            <h3 className="text-2xl font-semibold text-white">
+              TapCoins DAO
+            </h3>
 
-    {/* CHECK LIST */}
-    <ul className="mt-6 space-y-3 text-sm text-gray-300">
-      <li className="flex gap-3">
-        <span className="text-yellow-400">✓</span>
-        Allows for community governance, enabling users to participate in
-        decision-making processes related to the platform.
-      </li>
-      <li className="flex gap-3">
-        <span className="text-yellow-400">✓</span>
-        Encourages community involvement and investment in the ecosystem.
-      </li>
-    </ul>
-  </motion.div>
+            <p className="mt-2 text-sm text-gray-300">
+              A staking and earning protocol
+            </p>
 
-  {/* RIGHT IMAGE */}
-  <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    transition={{ duration: 0.8 }}
-    className="relative flex justify-center"
-  >
-    {/* IMAGE GLOW */}
-    <div className="absolute h-[420px] w-[420px] rounded-full bg-[#7a5cff]/30 blur-[150px]" />
+            <div className="mt-6 rounded-xl bg-white/5 p-5 text-sm text-gray-300 backdrop-blur">
+              Stake tokens to earn rewards, NFTs, and contribute to TapCoins ecosystem growth.
+            </div>
 
-    <img
-      src={daoImage}   
-      alt="TapCoins DAO"
-      className="relative z-10 w-[360px] md:w-[440px]"
-    />
-  </motion.div>
-</div>
+            <ul className="mt-6 space-y-3 text-sm text-gray-300">
+              <li className="flex gap-3 justify-center md:justify-start">
+                <span className="text-yellow-400">✓</span>
+                Community governance & decision making
+              </li>
+              <li className="flex gap-3 justify-center md:justify-start">
+                <span className="text-yellow-400">✓</span>
+                Encourages ecosystem investment
+              </li>
+            </ul>
+          </motion.div>
+
+          {/* IMAGE */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center"
+          >
+            <div className="absolute h-[300px] w-[300px] md:h-[420px] md:w-[420px] rounded-full bg-[#7a5cff]/30 blur-[150px]" />
+            <img
+              src={daoImage}
+              alt="TapCoins DAO"
+              className="relative z-10 w-[280px] md:w-[440px]"
+            />
+          </motion.div>
+        </div>
 
       </div>
-      
     </section>
   )
 }
