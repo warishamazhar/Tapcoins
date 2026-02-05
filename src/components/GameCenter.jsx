@@ -41,51 +41,52 @@ const cards = [
 export default function GameCenter() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center py-24 md:py-32"
+      className="relative overflow-hidden bg-cover bg-center py-28 md:py-36"
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* TITLE */}
-      <div className="relative z-10 px-6 text-center">
-        <h2 className="text-2xl md:text-3xl font-semibold text-white">
+      <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-white">
           TapCoins Game Center
         </h2>
-        <p className="mt-3 text-sm text-gray-300">
+
+        <p className="mt-4 text-base md:text-lg text-gray-300 leading-relaxed">
           A comprehensive distribution and marketplace platform for Web3 games
         </p>
       </div>
 
       {/* CARDS */}
-      <div className="relative z-10 mt-14 md:mt-20 flex flex-col items-center gap-10 md:flex-row md:justify-center px-6">
+      <div className="relative z-10 mt-20 flex flex-col items-center gap-14 md:flex-row md:justify-center px-6">
         {cards.map((card, i) => (
           <motion.div
             key={i}
-            whileHover={{ y: -12, rotate: 0, scale: 1.04 }}
+            whileHover={{ y: -14, rotate: 0, scale: 1.06 }}
             transition={{ type: 'spring', stiffness: 200, damping: 14 }}
-            className="relative w-[90%] max-w-[260px] md:w-[230px]"
+            className="relative w-[92%] max-w-[320px] md:w-[300px]"
             style={{ transform: `rotate(${card.rotate})` }}
           >
             {/* PIN */}
-            <div className="absolute -top-5 left-1/2 z-20 h-8 w-8 -translate-x-1/2 rounded-full bg-gradient-to-br from-orange-400 to-red-500 shadow-lg" />
+            <div className="absolute -top-6 left-1/2 z-20 h-10 w-10 -translate-x-1/2 rounded-full bg-gradient-to-br from-orange-400 to-red-500 shadow-xl" />
 
             {/* CARD */}
             <div
-              className={`relative rounded-2xl bg-gradient-to-br ${card.gradient} p-6 text-center shadow-xl`}
+              className={`relative rounded-3xl bg-gradient-to-br ${card.gradient} p-8 text-center shadow-2xl`}
             >
               {/* GLOW */}
-              <div className="absolute inset-0 -z-10 rounded-2xl bg-purple-500/30 blur-2xl" />
+              <div className="absolute inset-0 -z-10 rounded-3xl bg-purple-500/40 blur-3xl" />
 
               {/* ICON */}
               <img
                 src={card.icon}
                 alt={card.title}
-                className="mx-auto mb-5 h-24 w-24 md:h-28 md:w-28 object-contain"
+                className="mx-auto mb-6 h-32 w-32 md:h-36 md:w-36 object-contain"
               />
 
-              <h3 className="mb-2 whitespace-pre-line text-sm font-semibold text-white">
+              <h3 className="mb-3 whitespace-pre-line text-xl font-semibold text-white">
                 {card.title}
               </h3>
 
-              <p className="whitespace-pre-line text-[11px] leading-relaxed text-gray-200">
+              <p className="whitespace-pre-line text-base leading-relaxed text-gray-200">
                 {card.desc}
               </p>
             </div>

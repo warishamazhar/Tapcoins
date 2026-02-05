@@ -68,46 +68,54 @@ export default function Roadmap() {
       style={{ backgroundImage: `url(${bg})` }}
     >
       {/* TITLE */}
-      <h2 className="mb-16 md:mb-20 text-center text-2xl md:text-3xl font-semibold text-white">
-        TAPCOINS ROADMAP
-      </h2>
+     <h2 className="mb-20 md:mb-28 text-center text-4xl md:text-5xl lg:text-6xl font-extrabold text-white">
+  TAPCOINS ROADMAP
+</h2>
+
 
       {/* DESKTOP TIMELINE */}
       <div className="relative mx-auto max-w-6xl hidden md:block">
 
         {/* TOP */}
-        <div className="relative mb-20 h-[200px]">
-          {steps.map(
-            (s, i) =>
-              s.position === 'top' && (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: -24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute w-[300px]"
-                  style={{
-                    left: positions[i],
-                    top: 0,
-                    transform: 'translateX(-50%)',
-                  }}
-                >
-                  <h3 className="mb-2 text-sm font-semibold text-white">
-                    {s.title}
-                  </h3>
-                  <ul className="space-y-1 text-xs text-gray-300">
-                    {s.items.map((item, idx) => (
-                      <li key={idx} className="flex gap-2">
-                        <span className="mt-[6px] h-1 w-1 rounded-full bg-[#5a7cff]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )
-          )}
-        </div>
+    <div className="relative mb-28 h-[260px]">
+  {steps.map(
+    (s, i) =>
+      s.position === 'top' && (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: -28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="absolute w-[340px]"
+          style={{
+            left: positions[i],
+            top: 0,
+
+            transform:
+              i === 3
+                ? 'translateX(-78%)' // strong left shift (prevents text cutting)
+                : 'translateX(-80%)',
+          }}
+        >
+          <h3 className="mb-3 text-lg font-semibold text-white">
+            {s.title}
+          </h3>
+
+          <ul className="space-y-2 text-sm text-gray-300">
+            {s.items.map((item, idx) => (
+              <li key={idx} className="flex gap-3">
+                <span className="mt-[7px] h-2 w-2 rounded-full bg-[#5a7cff]" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )
+  )}
+</div>
+
+
 
         {/* LINE */}
         <div className="relative mb-20">
@@ -135,38 +143,39 @@ export default function Roadmap() {
         </div>
 
         {/* BOTTOM */}
-        <div className="relative h-[200px]">
-          {steps.map(
-            (s, i) =>
-              s.position === 'bottom' && (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5 }}
-                  className="absolute w-[300px]"
-                  style={{
-                    left: positions[i],
-                    top: 0,
-                    transform: 'translateX(-50%)',
-                  }}
-                >
-                  <h3 className="mb-2 text-sm font-semibold text-white">
-                    {s.title}
-                  </h3>
-                  <ul className="space-y-1 text-xs text-gray-300">
-                    {s.items.map((item, idx) => (
-                      <li key={idx} className="flex gap-2">
-                        <span className="mt-[6px] h-1 w-1 rounded-full bg-[#5a7cff]" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </motion.div>
-              )
-          )}
-        </div>
+       <div className="relative h-[260px]">
+  {steps.map(
+    (s, i) =>
+      s.position === 'bottom' && (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="absolute w-[340px]"
+          style={{
+            left: positions[i],
+            top: 0,
+            transform: 'translateX(-50%)',
+          }}
+        >
+          <h3 className="mb-3 text-lg font-semibold text-white">
+            {s.title}
+          </h3>
+
+          <ul className="space-y-2 text-sm text-gray-300">
+            {s.items.map((item, idx) => (
+              <li key={idx} className="flex gap-3">
+                <span className="mt-[7px] h-2 w-2 rounded-full bg-[#5a7cff]" />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </motion.div>
+      )
+  )}
+</div>
       </div>
 
       {/* MOBILE STACK */}

@@ -10,10 +10,10 @@ import dao from '../assets/dao.png'
 const stats = [
   { title: 'Players', value: '15 MILLION +' },
   { title: 'DAU', value: '2 MILLION +' },
-  { title: 'COUNTRIES COVERED', value: '200 +' },
+  { title: 'Countries Covered', value: '200 +' },
 ]
 
-// ecosystem items (icons will be images later)
+// ecosystem items
 const ecosystem = [
   {
     title: 'TapCoins Game Center',
@@ -22,127 +22,113 @@ const ecosystem = [
   },
   {
     title: 'TapCoins SDK',
-    desc: 'Marketing & Tracking\nApi for Builders',
-     icon: sdk,
+    desc: 'Marketing & Tracking\nAPI for Builders',
+    icon: sdk,
   },
   {
     title: 'TapCoins Player ID',
     desc: 'The Unique Decentralized\nID System',
-     icon: playerId,
+    icon: playerId,
   },
   {
     title: 'TapCoins DAO',
     desc: 'Staking & Earning Protocol',
-     icon: dao,
+    icon: dao,
   },
 ]
 
 export default function Ecosystem() {
   return (
     <section
-      className="relative overflow-hidden bg-cover bg-center py-32"
+      className="relative overflow-hidden bg-cover bg-center py-28"
       style={{ backgroundImage: `url(${bg})` }}
     >
-     {/* TOP TEXT */}
-<div className="relative z-10 mx-auto max-w-[620px] px-6 text-center">
-  <h2 className="mb-3 text-2xl font-semibold text-white">
-    TapCoins
-  </h2>
+      {/* TOP TEXT */}
+      <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
+        <h2 className="mb-4 text-4xl md:text-5xl font-extrabold text-white">
+          TapCoins
+        </h2>
 
-  <p className="text-[12px] leading-relaxed text-gray-300">
-    TapCoins is an innovative platform built on the TON network, designed to transform
-    <br />
-   how users interact with Web3 knowledge and games. We help users explore,
-    <br />
-   learn, and earn through gamified social interactions while providing developers
-    <br />
-     with a powerful platform to publish and monetize their games in the Web3 ecosystem.
-
-  </p>
-</div>
-
-
-     {/* STATS CARDS */}
-<div className="relative z-10 mt-12 flex justify-center gap-5 px-6">
-  {stats.map((item, i) => (
-    <motion.div
-      key={i}
-      whileHover={{ y: -2 }}
-      transition={{ duration: 0.25 }}
-      className="relative h-[84px] w-[190px] rounded-md border border-white/15 bg-cover bg-center p-3 text-center"
-      style={{ backgroundImage: `url(${cardBg})` }}
-    >
-      <div className="text-[9px] uppercase tracking-widest text-gray-300">
-        {item.title}
+        <p className="text-base md:text-lg leading-relaxed text-gray-300">
+          TapCoins is an innovative platform built on the TON network, designed to transform
+          how users interact with Web3 knowledge and games.
+          We help users explore, learn, and earn through gamified social interactions
+          while providing developers with a powerful platform to publish and monetize
+          their games in the Web3 ecosystem.
+        </p>
       </div>
 
-      <div className="mt-1.5 text-base font-extrabold text-yellow-400">
-        {item.value}
-      </div>
-    </motion.div>
-  ))}
-</div>
+      {/* STATS CARDS */}
+      <div className="relative z-10 mt-16 flex flex-wrap justify-center gap-8 px-6">
+        {stats.map((item, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -4, scale: 1.02 }}
+            transition={{ duration: 0.25 }}
+            className="relative h-[120px] w-[260px] rounded-xl border border-white/20 bg-cover bg-center p-6 text-center"
+            style={{ backgroundImage: `url(${cardBg})` }}
+          >
+            <div className="text-xs uppercase tracking-widest text-gray-300">
+              {item.title}
+            </div>
 
+            <div className="mt-3 text-2xl font-extrabold text-yellow-400">
+              {item.value}
+            </div>
+          </motion.div>
+        ))}
+      </div>
 
       {/* ECOSYSTEM TITLE */}
-      <div className="relative z-10 mt-28 text-center">
-        <h3 className="text-2xl font-semibold text-white">
+      <div className="relative z-10 mt-32 text-center">
+        <h3 className="text-4xl md:text-5xl font-extrabold text-white">
           TapCoins Eco-System
         </h3>
       </div>
 
       {/* ECOSYSTEM GRID */}
-   <div className="relative z-10 mx-auto mt-14 grid max-w-5xl place-items-center grid-cols-1 gap-8 px-6 md:grid-cols-4">
-  {ecosystem.map((item, i) => (
-    <motion.div
-      key={i}
-      whileHover={{ y: -5 }}
-      transition={{ duration: 0.25 }}
-      className="text-center"
-    >
-      {/* ICON */}
-    <motion.div
-  animate={{ y: [0, -8, 0] }}
-  transition={{
-    duration: 4,
-    repeat: Infinity,
-    ease: 'easeInOut',
-  }}
-  whileHover={{ y: -14, scale: 1.06 }}
-  className="relative mx-auto mb-3 flex h-40 w-40 items-center justify-center"
->
-  {/* Neon / royal glow */}
-  <motion.div
-    className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-45 blur-[60px]"
-    whileHover={{ opacity: 0.7 }}
-  />
-  <motion.div
-    className="absolute inset-0 rounded-full bg-[#5a7cff] opacity-35 blur-[120px]"
-    whileHover={{ opacity: 0.55 }}
-  />
+      <div className="relative z-10 mx-auto mt-20 grid max-w-7xl grid-cols-1 gap-14 px-6 md:grid-cols-4">
+        {ecosystem.map((item, i) => (
+          <motion.div
+            key={i}
+            whileHover={{ y: -8 }}
+            transition={{ duration: 0.25 }}
+            className="text-center"
+          >
+            {/* ICON */}
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
+              whileHover={{ y: -18, scale: 1.08 }}
+              className="relative mx-auto mb-6 flex h-56 w-56 items-center justify-center"
+            >
+              {/* Glow */}
+              <motion.div
+                className="absolute inset-0 rounded-full bg-[#00E5FF] opacity-50 blur-[80px]"
+                whileHover={{ opacity: 0.75 }}
+              />
+              <motion.div
+                className="absolute inset-0 rounded-full bg-[#5a7cff] opacity-40 blur-[150px]"
+                whileHover={{ opacity: 0.6 }}
+              />
 
-  {/* Icon */}
-  <img
-    src={item.icon}
-    alt={item.title}
-    className="relative z-10 h-28 w-28 object-contain"
-  />
-</motion.div>
+              <img
+                src={item.icon}
+                alt={item.title}
+                className="relative z-10 h-36 w-36 object-contain"
+              />
+            </motion.div>
 
+            <h4 className="mb-3 text-xl font-semibold text-yellow-400">
+              {item.title}
+            </h4>
 
-
-      <h4 className="mb-1 text-sm font-semibold text-yellow-400">
-        {item.title}
-      </h4>
-
-      <p className="text-[11px] leading-snug text-gray-300 whitespace-pre-line">
-        {item.desc}
-      </p>
-    </motion.div>
-  ))}
-</div>
-
-
+            <p className="text-base leading-relaxed text-gray-300 whitespace-pre-line">
+              {item.desc}
+            </p>
+          </motion.div>
+        ))}
+      </div>
     </section>
   )
 }
